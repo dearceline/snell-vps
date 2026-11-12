@@ -91,7 +91,7 @@ platform_check() {
     [[ ! -e /etc/alpine-release ]] || die '官方程序需要 glibc；本脚本支持 systemd，暂不支持 Alpine/OpenRC。'
     [[ -d /run/systemd/system ]] || die '当前环境没有运行 systemd。'
     need systemctl
-    arch_name >/dev/null || die "不支持的架构：$(uname -m)"
+    arch_name "$(uname -m)" >/dev/null || die "不支持的架构：$(uname -m)"
 }
 lock_manager() {
     need flock
@@ -196,7 +196,7 @@ download_archive() {
 }
 prepare_binary() {
     local ver=$1 arch output
-    arch=$(arch_name) || die '未知架构。'
+    arch=$(arch_name "$(uname -m)") || die '未知架构。'
     temp_dir
     download_archive "$ver" "$arch" "$TMP/snell.zip"
     [[ $(unzip -Z1 "$TMP/snell.zip" | grep -Fxc snell-server) == 1 ]] || die '压缩包缺少唯一的 snell-server。'
