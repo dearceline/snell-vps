@@ -1,0 +1,26 @@
+name: Verify Snell manager
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dependencies
+        run: sudo apt-get update && sudo apt-get install -y shellcheck unzip curl openssl iproute2
+      - name: Bash syntax and ShellCheck
+        run: |
+          for script in snell.sh tests/*.sh; do bash -n "$script"; done
+          shellcheck -S warning snell.sh tests/*.sh
+      - name: Offline regression tests
+        run: |
+          bash tests/unit.sh
+          bash tests/transaction.sh
+          python3 tests/catalog.py
+      - name: Real systemd integration tests
+        run: sudo bash tests/integration.sh
