@@ -7,6 +7,14 @@ export SNELL_SOURCE_ORDER=official
 manager() { bash ./snell.sh "$@"; }
 fail() { printf 'FAIL: %s\n' "$*" >&2; exit 1; }
 reject() { if "$@"; then fail "unexpected success: $*"; fi; }
+systemctl() {
+    if [[ ${1:-} == restart && ${2:-} == snell-vps-ci-a.service && -f ${FAIL_RESTART_FILE:-} ]]; then
+        /usr/bin/systemctl stop "$2"
+        rm -f "$FAIL_RESTART_FILE"
+        return 1
+    fi
+    /usr/bin/systemctl "$@"
+}
 
 # Legacy sentinel must survive every manager operation.
 [[ ! -e /etc/snell && ! -e /usr/local/bin/snell-server ]] || fail 'runner has existing legacy data'
@@ -49,14 +57,6 @@ reject manager configure --name ci-a --port 39844
 # Inject one failed restart after a config change; the recovery restart is real.
 export FAIL_RESTART_FILE=/tmp/snell-ci-fail-restart
 touch "$FAIL_RESTART_FILE"
-systemctl() {
-    if [[ ${1:-} == restart && ${2:-} == snell-vps-ci-a.service && -f $FAIL_RESTART_FILE ]]; then
-        /usr/bin/systemctl stop "$2"
-        rm -f "$FAIL_RESTART_FILE"
-        return 1
-    fi
-    /usr/bin/systemctl "$@"
-}
 export -f systemctl
 reject manager configure --name ci-a --port 39846
 systemctl is-active --quiet snell-vps-ci-a.service
