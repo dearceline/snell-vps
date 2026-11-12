@@ -1,0 +1,79 @@
+[
+  {
+    "version": "4.1.1",
+    "arch": "amd64",
+    "sha256": "cc2271b79c7506888b34e651e8741b3aa7fc7d5f60aa65ef8bb096f3313a193b",
+    "url": "https://dl.nssurge.com/snell/snell-server-v4.1.1-linux-amd64.zip",
+    "bytes": 1208233
+  },
+  {
+    "version": "4.1.1",
+    "arch": "i386",
+    "sha256": "09579fceebf69ff291453b8e252a9f74c7ca82246ec8572a6e2376008df25ae1",
+    "url": "https://dl.nssurge.com/snell/snell-server-v4.1.1-linux-i386.zip",
+    "bytes": 1253902
+  },
+  {
+    "version": "4.1.1",
+    "arch": "aarch64",
+    "sha256": "38d4cdc03dcdb3608af8594df83e1795265167fafc5d802f815148908902d758",
+    "url": "https://dl.nssurge.com/snell/snell-server-v4.1.1-linux-aarch64.zip",
+    "bytes": 1250250
+  },
+  {
+    "version": "4.1.1",
+    "arch": "armv7l",
+    "sha256": "d00b98ed803be4039f0f0630b810932cd3d3d87ee3e6ed224106fdc63347d8e6",
+    "url": "https://dl.nssurge.com/snell/snell-server-v4.1.1-linux-armv7l.zip",
+    "bytes": 967780
+  },
+  {
+    "version": "5.0.1",
+    "arch": "amd64",
+    "sha256": "9bea1c2b9e35b73b31634856c04d18c393072b9e5dcde6a32781d8b8f908c539",
+    "url": "https://dl.nssurge.com/snell/snell-server-v5.0.1-linux-amd64.zip",
+    "bytes": 1214174
+  },
+  {
+    "version": "5.0.1",
+    "arch": "i386",
+    "sha256": "6a3e30928315427d6f747f26408d0f74eb88f460344d0e1fcb3f7c32c708a09d",
+    "url": "https://dl.nssurge.com/snell/snell-server-v5.0.1-linux-i386.zip",
+    "bytes": 1260524
+  },
+  {
+    "version": "5.0.1",
+    "arch": "aarch64",
+    "sha256": "2f178bf5ac468ce1a130454efa40a0603fbbe4e47ecc4880a989f4abc7f824cf",
+    "url": "https://dl.nssurge.com/snell/snell-server-v5.0.1-linux-aarch64.zip",
+    "bytes": 1255807
+  },
+  {
+    "version": "5.0.1",
+    "arch": "armv7l",
+    "sha256": "14489f3e857569c8835dd3598b7ea6bca5371d4290ac7cf0f6c8dfb3381c1fb2",
+    "url": "https://dl.nssurge.com/snell/snell-server-v5.0.1-linux-armv7l.zip",
+    "bytes": 972611
+  },
+  {
+    "version": "6.0.0",
+    "arch": "amd64",
+    "sha256": "8a9c4463ca87cfa5eaa37c6af0d37ab93ea275aa12391985bb2a375ca3abd7f2",
+    "url": "https://dl.nssurge.com/snell/snell-server-v6.0.0-linux-amd64.zip",
+    "bytes": 1320017
+  },
+  {
+    "version": "6.0.0",
+    "arch": "i386",
+    "sha256": "67060ef79ac4ef0bb64c520302396620b3a06f8f6d5ceb450be283e4fa749335",
+    "url": "https://dl.nssurge.com/snell/snell-server-v6.0.0-linux-i386.zip",
+    "bytes": 1314761
+  },
+  {
+    "version": "6.0.0",
+    "arch": "aarch64",
+    "sha256": "a0b2915cbc77dc3baf8fa069e741c20808d8a10c3a8a93e709a0a580645c3bd7",
+    "url": "https://dl.nssurge.com/snell/snell-server-v6.0.0-linux-aarch64.zip",
+    "bytes": 1308111
+  }
+]
